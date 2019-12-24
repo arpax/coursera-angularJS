@@ -1,0 +1,10 @@
+body {
+  background-color: orange;
+}
+
+div.box {width: 100px; height: 100px; background-color: blue; margin: 10px; float: right;}
+div.box2 {width: 100px; height: 100px; background-color: red; margin: 10px;}
+button {
+  height: 50px;
+  width: 150px;
+}
