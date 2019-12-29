@@ -9,13 +9,31 @@ function LunchCheckController($scope){
 
 $scope.lunchList;
 $scope.lunchMessage;
+
 $scope.lunchCheck = function (){
-  var lunchElements = $scope.lunchList.split(",");
-  if (lunchElements.length < 3) {
-    $scope.lunchMessage = "MORE";
-  } else {
-    $scope.lunchMessage = "TOO MUCH";
+
+  if (!$scope.lunchList) {
+    $scope.lunchMessage = "PLEASE ENTER SOMETHING!";
+    return;
   }
+  var lunchElements = $scope.lunchList.split(",");
+  var validElements = 0;
+
+  for (var i in lunchElements){
+    var element = lunchElements[i].trim();
+     if (element) {
+       console.debug(element +" is a valid element");
+       validElements++;
+     } else {
+       console.debug(element +" is NOT a valid element");
+     }
+    }
+
+    if (validElements < 3) {
+      $scope.lunchMessage = "MORE";
+    } else {
+      $scope.lunchMessage = "TOO MUCH";
+    }
 
   }
 
