@@ -7,13 +7,17 @@ angular.module('LunchCheck', [])
 LunchCheckController.$inject = ['$scope'];
 function LunchCheckController($scope){
 
-$scope.lunchList = "The list";
-$scope.lunchMessage = "The message";
+$scope.lunchList;
+$scope.lunchMessage;
 $scope.lunchCheck = function (){
+  var lunchElements = $scope.lunchList.split(",");
+  if (lunchElements.length < 3) {
+    $scope.lunchMessage = "MORE";
+  } else {
+    $scope.lunchMessage = "TOO MUCH";
+  }
 
-$scope.lunchMessage = $scope.lunchList;
-}
-
+  }
 
 }
 
