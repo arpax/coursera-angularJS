@@ -2,7 +2,7 @@
 (function () {
 'use strict';	
 angular.module('base', [])
-.controller('baseController', function($scope) {
+.controller('baseController', function($scope, $filter) {
 
 $scope.var ="A variable";
 $scope.simplefunction = function () {
@@ -10,6 +10,11 @@ $scope.simplefunction = function () {
 }
 $scope.function = function (param) {
     return "Rerturning parameter: "+ param;
+}
+
+$scope.upper = function() {
+    var toUppercase= $filter("uppercase");
+    $scope.var = toUppercase($scope.var);
 }
 
 });

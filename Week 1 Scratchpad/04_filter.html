@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="base">
+<head>
+	<script type="text/javascript" src="node_modules\angular\angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<title>Filters</title>
+</head>
+<body>
+<div ng-controller='baseController'>
+
+<input type="text" ng-model="var" ng-blur="upper()">
+
+<br>
+<ul>
+		<li><code>currency</code> Format a number to a currency format.</li>
+		<li><code>date</code> Format a date to a specified format.</li>
+		<li><code>filter</code> Select a subset of items from an array.</li>
+		<li><code>json</code> Format an object to a JSON string.</li>
+		<li><code>limitTo</code> Limits an array/string, into a specified number of elements/characters.</li>
+		<li><code>lowercase</code> Format a string to lower case.</li>
+		<li><code>number</code> Format a number to a string.</li>
+		<li><code>orderBy</code> Orders an array by an expression.</li>
+		<li><code>uppercase</code> Format a string to upper case.</li>
+	</ul>
+
+</div>
+</body>
+</html>
