@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="base">
+<head>
+	<script type="text/javascript" src="node_modules\angular\angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<link rel="stylesheet" href="sliders.css">
+	<title>Interpolation</title>
+</head>
+<body>
+<div ng-controller='baseController'>
+	<label class="switch">
+			<input type="checkbox" ng-model='sliderValue' ng-change='updateState()'>
+			<span class="slider round"></span>
+	</label>
+	<br> Slider value = {{sliderValue}}
+	<br>
+	<img ng-src='TrafficLight{{tlstatus}}.png'></img>
+</div>
+</body>
+</html>

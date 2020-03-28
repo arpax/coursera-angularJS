@@ -6,19 +6,33 @@ angular.module('base', [])
 // Injection in modo elegante tramite servizio $inject
 baseController.$inject = ['$scope', '$filter'];
 function baseController($scope, $filter) {
+    
+    // BASE EXAMPLES
+    $scope.var ="A variable";
+    $scope.simplefunction = function () {
+        return "Returning string";
+    }
+    $scope.function = function (param) {
+        return "Rerturning parameter: "+ param;
+    }
 
-$scope.var ="A variable";
-$scope.simplefunction = function () {
-    return "Returning string";
-}
-$scope.function = function (param) {
-    return "Rerturning parameter: "+ param;
-}
+    // UPPERCASE FILTER
+    $scope.upper = function() {
+        var toUppercase= $filter("uppercase");
+        $scope.var = toUppercase($scope.var);
+    }
 
-$scope.upper = function() {
-    var toUppercase= $filter("uppercase");
-    $scope.var = toUppercase($scope.var);
-}
+    //STATE
+    $scope.sliderValue;
+    $scope.tlstatus = '';
+    // MAP sliderValue TO tlstatus
+    $scope.updateState = function(){
+        if($scope.sliderValue){
+            $scope.tlstatus = "Green";
+        } else {
+            $scope.tlstatus = "Red";
+        }
+    }
 
 };
 
@@ -43,9 +57,6 @@ function calculateValue (string) {
     }
     return value;
 }
-
-
 };
-
 
 })();
