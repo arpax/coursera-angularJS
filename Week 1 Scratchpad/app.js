@@ -2,7 +2,10 @@
 (function () {
 'use strict';	
 angular.module('base', [])
-.controller('baseController', function($scope, $filter) {
+.controller('baseController', baseController);
+// Injection in modo elegante tramite servizio $inject
+baseController.$inject = ['$scope', '$filter'];
+function baseController($scope, $filter) {
 
 $scope.var ="A variable";
 $scope.simplefunction = function () {
@@ -17,11 +20,12 @@ $scope.upper = function() {
     $scope.var = toUppercase($scope.var);
 }
 
-});
+};
 
 angular.module('nameCalc', [])
-.controller('nameCalcCtrl', function($scope){
-
+.controller('nameCalcCtrl', ['$scope',nameCalcCtrl]);
+// Injection attraverso array di oggetti come secondo argomento del controller. Ultimo argomento è sempre la funzione.
+function nameCalcCtrl($scope){
 $scope.name = "";
 $scope.value = 0;
 
@@ -41,7 +45,7 @@ function calculateValue (string) {
 }
 
 
-});
+};
 
 
 })();
