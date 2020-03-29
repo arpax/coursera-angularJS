@@ -14,7 +14,33 @@ function baseController($scope, $filter) {
     // CUSTOM FILTERS
     $scope.input = "";
     $scope.index = 1;
+
+    // Watchers
+    $scope.logWatchers= function () {
+        // console.log($scope);
+        console.log("Number of wathers = "+$scope.$$watchersCount);
+    };
     
+    $scope.counter = 0;
+
+    $scope.incrementOnce = function(){
+        $scope.counter = 1;
+    };
+
+    $scope.increment = function(){
+        $scope.counter++;
+    };
+    /** ADD WATCH
+    $scope.$watch('counter', function(newValue,oldValue){
+        console.log(newValue);
+        console.log(oldValue);
+    });
+     */
+
+    $scope.$watch(function(){
+        console.log("DIGEST LOOP FIRED!");
+    });
+
 };
 
         function alternateCaseFilterFactory() {

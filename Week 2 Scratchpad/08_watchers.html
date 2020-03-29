@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html ng-app="base">
+<head>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<title>Watchers</title>
+</head>
+<body>
+<div ng-controller='baseController'>
+<button ng-click='logWatchers()'>Log watchers</button>
+<button ng-click='incrementOnce()'>Increment Once</button>
+<button ng-click='increment()'>Increment</button>
+<div>Counter = {{counter}}</div>
+</body>
+</html>
