@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html ng-app="base">
+<head>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<title>More filters</title>
+</head>
+<body>
+<div ng-controller='baseController'>
+	<div>{{var}}</div>
+	<div>{{filteredVar}}</div>
+	<div>{{ number | currency : '@' : 8 }}</div>
+</body>
+</html>
