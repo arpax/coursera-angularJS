@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html ng-app="base">
+<head>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<title>More filters</title>
+</head>
+<body>
+<div ng-controller='baseController'>
+	<input type="text" ng-model='input'>
+	<input type="text" ng-model='index'>
+	<div>{{input|alternateCase:index}}</div>
+</body>
+</html>
