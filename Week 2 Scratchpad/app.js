@@ -59,4 +59,45 @@ function baseController($scope, $filter) {
             }
         }
 
+    angular.module('digest', [])
+        .controller('digestController', digestController);
+
+    digestController.$inject = ['$scope','$timeout'];
+
+    function digestController($scope, $timeout) {
+
+        $scope.counterValue = 0;
+
+        $scope.customTimeout = function () {
+            setTimeout(function () {
+                $scope.counterValue++;
+                console.log("counter UP");
+                console.log($scope.counterValue);
+            }, 2000);
+        };
+
+        $scope.digestTimeout = function () {
+            setTimeout(function () {
+                $scope.counterValue++;
+                console.log("counter UP");
+                $scope.$digest();
+            }, 2000);
+        };
+
+        $scope.applyTimeout = function () {
+            setTimeout(function () {
+                    $scope.$apply(function () {
+                    $scope.counterValue++;
+                });
+            }, 2000);
+        };
+
+        $scope.ngTimeout = function () {
+            $timeout(function () {
+                $scope.counterValue++;
+            }, 2000);
+        };
+
+    };
+
 })();

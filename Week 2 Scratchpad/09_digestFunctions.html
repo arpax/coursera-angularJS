@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="digest">
+
+<head>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+    <title>Digest Functions</title>
+</head>
+
+<body>
+    <div ng-controller="digestController">
+        <button ng-click="customTimeout()">Custom Timeout</button>
+        <button ng-click="digestTimeout()">Digest Timeout</button>
+        <button ng-click="applyTimeout()">Apply Timeout</button>
+        <button ng-click="ngTimeout()">ng-timeout</button>
+
+        <div>Counter = {{counterValue}}</div>
+    </div>
+</body>
+
+</html>
