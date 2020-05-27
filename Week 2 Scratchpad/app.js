@@ -52,7 +52,7 @@ function baseController($scope, $filter) {
                     if (i % index == 0) {
                         out += input[i].toUpperCase();
                     } else {
-                        out += input[i];
+                        out += input[i].toLowerCase();
                     }
                 }
                 return out;
