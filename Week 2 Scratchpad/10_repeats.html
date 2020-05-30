@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app=loop>
+
+<head>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <title>Shopping List</title>
+</head>
+
+<body >
+<div ng-controller=repeatController >
+    <ul>
+        <li ng-repeat="item in shoppingList">
+            {{ item.name }} : {{ item.quantity }}
+        </li>
+    </ul>
+
+    <input ng-model="newName" placeholder="Nome" ></input>
+    <input ng-model="newAmount" placeholder="1" ></input>
+
+    <button ng-click = "newItem()" >new item</button>
+</div>
+</body>
+
+</html>

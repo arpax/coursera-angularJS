@@ -1,6 +1,7 @@
 
 (function () {
     'use strict';
+
     angular.module('base', [])
         .controller('baseController', baseController)
         .filter('alternateCase', alternateCaseFilterFactory);
@@ -99,5 +100,28 @@
         };
 
     };
+
+
+    angular.module("loop",[])
+    .controller("repeatController", repeatController);
+    repeatController.$inject= ["$scope"];
+    function repeatController ($scope) {
+
+        $scope.shoppingList= [
+            { name : "Gelato", quantity : 1 }, { name : "Frutta", quantity : 2 }
+        ];
+
+        $scope.newItem = function(){
+            if($scope.newName && $scope.newAmount ){
+            var newItem = { name : $scope.newName, quantity : $scope.newAmount}
+            $scope.shoppingList.push(newItem);
+            $scope.newName = null;
+            $scope.newAmount = null;
+            } else {
+                alert("Inserire nome e quantità");
+            }
+        }
+    }
+
 
 })();
