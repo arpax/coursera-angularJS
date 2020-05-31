@@ -9,8 +9,9 @@
 
 <body >
 <div ng-controller=repeatController >
+    <div>FILTRO: </div><input type="text" ng-model="filterName">
     <ul>
-        <li ng-repeat="item in shoppingList">
+        <li ng-repeat="item in shoppingList | filter : filterName ">
             {{ item.name }} : {{ item.quantity }}
         </li>
     </ul>
