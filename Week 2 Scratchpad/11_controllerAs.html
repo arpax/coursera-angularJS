@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="controllerAs">
+
+<head>
+    <title>Controller As</title>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</head>
+
+<body ng-controller="parentController as parent">
+    <div>parent name is {{parent.name}} </div>
+    <div ng-controller="childController as child">
+        parent name is {{parent.name}}
+        child name is {{child.name}}
+    </div>
+
+</body>
+
+</html>

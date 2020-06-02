@@ -123,5 +123,22 @@
         }
     }
 
+    angular.module("controllerAs", [])
+        .controller("parentController", parentController)
+        .controller("childController", childController);
+    // NO NEED TO INJECT SCOPE
+    function parentController() {
+
+        var parent = this; // THIS IS A REFERENCE TO THE CONTROLLER INSTANCE
+        parent.name = "PADRE";
+
+    }
+
+    function childController() {
+
+        var child = this; // ASSIEGN TO VARIABLE WITH SAME NAME AS THE "CONTROLLER AS" VARIABLE (CONVENTION, NOT MANDATORY)
+        child.name = "FIGLIO";
+
+    }
 
 })();
