@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app=services>
+
+<head>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <title>Shopping List</title>
+</head>
+
+<body>
+
+    <div ng-controller="adderController as adder">
+        <input ng-model="adder.name" placeholder="Nome"></input>
+        <input ng-model="adder.amount" placeholder="1"></input>
+
+        <button ng-click="adder.newItem()">New item</button>
+    </div>
+
+    <div ng-controller="viewerController as viewer">
+        <ul>
+            <li ng-repeat="item in viewer.shoppingList">
+                {{ item.name }} : {{ item.quantity }}
+                <button ng-click="viewer.removeItem($index)">REMOVE</button>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

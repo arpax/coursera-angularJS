@@ -136,8 +136,63 @@
 
     function childController() {
 
-        var child = this; // ASSIEGN TO VARIABLE WITH SAME NAME AS THE "CONTROLLER AS" VARIABLE (CONVENTION, NOT MANDATORY)
+        var child = this; // ASSIGN TO VARIABLE WITH SAME NAME AS THE "CONTROLLER AS" VARIABLE (CONVENTION, NOT MANDATORY)
         child.name = "FIGLIO";
+
+    }
+
+    angular.module("services", [])
+        .controller("adderController", adderController)
+        .controller("viewerController", viewerController)
+        .service("ShoppingListManager", ShoppingListManager);
+
+    adderController.$inject = ["ShoppingListManager"];
+    function adderController(ShoppingListManager) {
+
+        var adder = this;
+        adder.name = "";
+        adder.amount = "";
+        // CALLS SERVICE FOR BUSINESS LOGIC
+        adder.newItem = function () {
+            ShoppingListManager.addItem(adder.name, adder.amount);
+        }
+    }
+
+    viewerController.$inject = ["ShoppingListManager"];
+    function viewerController(ShoppingListManager) {
+        var viewer = this;
+
+        viewer.shoppingList = ShoppingListManager.getItems();
+
+        viewer.removeItem = function (itemIndex) {
+            ShoppingListManager.remove(itemIndex);
+        }
+    }
+
+    // Service that manages the shopping list -- BUSINESS LOGIC
+    function ShoppingListManager() {
+        var manager = this;
+
+        var items = []; // HIDDEN ITEMS (not manager.items)
+
+        //EXPOSED METHOD TO ADD ITEMS
+        manager.addItem = function (_name, _amount) {
+            var newItem = {
+                name: _name,
+                quantity: _amount
+            };
+            items.push(newItem);
+        }
+
+        //EXPOSED METHOD TO GET ITEMS
+        manager.getItems = function () {
+            return items;
+        }
+
+        manager.remove = function (itemIndex) {
+
+            items.splice(itemIndex, 1);
+        }
 
     }
 
