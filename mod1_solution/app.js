@@ -13,7 +13,7 @@ $scope.lunchMessage;
 $scope.lunchCheck = function (){
 
   if (!$scope.lunchList) {
-    $scope.lunchMessage = "PLEASE ENTER SOMETHING!";
+    $scope.lunchMessage = "Please enter data first";
     return;
   }
   var lunchElements = $scope.lunchList.split(",");
@@ -30,9 +30,9 @@ $scope.lunchCheck = function (){
     }
 
     if (validElements < 3) {
-      $scope.lunchMessage = "MORE";
+      $scope.lunchMessage = "Enjoy!";
     } else {
-      $scope.lunchMessage = "TOO MUCH";
+      $scope.lunchMessage = "Too much!";
     }
 
   }
