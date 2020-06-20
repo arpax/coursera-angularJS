@@ -29,7 +29,7 @@ $scope.lunchCheck = function (){
      }
     }
 
-    if (validElements < 3) {
+    if (validElements <= 3) {
       $scope.lunchMessage = "Enjoy!";
     } else {
       $scope.lunchMessage = "Too much!";
