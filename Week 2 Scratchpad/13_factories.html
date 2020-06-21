@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app=services>
+
+<head>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="factory app.js"></script>
+    <title>Shopping List</title>
+</head>
+
+<body>
+
+    <h1>Factory Exercise</h1>
+    <div>
+        <h3>LIST 1</h3>
+        <div ng-controller="shoppingListController1 as controller1">
+            <input ng-model="controller1.name" placeholder="Nome"></input>
+            <input ng-model="controller1.amount" placeholder="1"></input>
+
+            <button ng-click="controller1.newItem()">New item</button>
+
+            <ul>
+                <li ng-repeat="item in controller1.shoppingList">
+                    {{ item.name }} : {{ item.quantity }}
+                    <button ng-click="controller1.removeItem($index)">REMOVE</button>
+                </li>
+            </ul>
+
+            <div>Error: {{controller1.message}}</div>
+        </div>
+
+        <h3>LIST 2</h3>
+        <div ng-controller="shoppingListController2 as controller2">
+            <input ng-model="controller2.name" placeholder="Nome"></input>
+            <input ng-model="controller2.amount" placeholder="1"></input>
+
+            <button ng-click="controller2.newItem()">New item</button>
+
+            <ul>
+                <li ng-repeat="item in controller2.shoppingList">
+                    {{ item.name }} : {{ item.quantity }}
+                    <button ng-click="controller2.removeItem($index)">REMOVE</button>
+                </li>
+            </ul>
+
+            <div>Error: {{controller2.message}}</div>
+        </div>
+    </div>
+</body>
+
+</html>
