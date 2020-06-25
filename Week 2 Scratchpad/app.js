@@ -198,8 +198,8 @@
 
     angular.module("providers", [])
         .controller("shoppingListController", shoppingListController)
-        .provider("ShoppingListManager", ShoppingListManagerProvider);
-        //.config(ProviderConfiguration);
+        .provider("ShoppingListManager", ShoppingListManagerProvider)
+        .config(ProviderConfiguration);
 
         shoppingListController.$inject = ["ShoppingListManager"];
     function shoppingListController(ShoppingListManager) {
@@ -267,6 +267,11 @@
             var service = new ShoppingListManager(provider.config.maxItems);
             return service;
         };
+    }
+
+    ProviderConfiguration.$inject = ["ShoppingListManagerProvider"];
+    function ProviderConfiguration (ShoppingListManagerProvider){
+        ShoppingListManagerProvider.config.maxItems = 2; //Overrides the previous configuration.
     }
 
 })();
