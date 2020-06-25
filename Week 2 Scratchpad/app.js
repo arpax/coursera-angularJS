@@ -196,4 +196,77 @@
 
     }
 
+    angular.module("providers", [])
+        .controller("shoppingListController", shoppingListController)
+        .provider("ShoppingListManager", ShoppingListManagerProvider);
+        //.config(ProviderConfiguration);
+
+        shoppingListController.$inject = ["ShoppingListManager"];
+    function shoppingListController(ShoppingListManager) {
+
+        var ctrl = this;
+        ctrl.name = "";
+        ctrl.amount = "";
+        ctrl.message = "";
+        // CALLS SERVICE FOR BUSINESS LOGIC
+
+        ctrl.newItem = function () {
+            try {
+                ShoppingListManager.addItem(ctrl.name, ctrl.amount);
+            } catch (e) {
+                ctrl.message= e.message;
+            }
+        }
+
+        ctrl.shoppingList = ShoppingListManager.getItems();
+
+        ctrl.removeItem = function (itemIndex) {
+            ShoppingListManager.remove(itemIndex);
+        }
+    }
+
+    // Service that manages the shopping list -- BUSINESS LOGIC
+    function ShoppingListManager(maxItems) {
+        var manager = this;
+
+        var items = []; // HIDDEN ITEMS (not manager.items)
+
+        //EXPOSED METHOD TO ADD ITEMS
+        manager.addItem = function (_name, _amount) {
+            if (maxItems === undefined || items.length < maxItems) {
+                var newItem = {
+                    name: _name,
+                    quantity: _amount
+                };
+                items.push(newItem);
+            } else {
+                throw new Error("Max items reached: " + maxItems);
+            }
+        }
+
+        //EXPOSED METHOD TO GET ITEMS
+        manager.getItems = function () {
+            return items;
+        }
+
+        manager.remove = function (itemIndex) {
+
+            items.splice(itemIndex, 1);
+        }
+
+    }
+
+
+    function ShoppingListManagerProvider(){
+        var provider = this;
+        provider.config = {
+            maxItems: 10
+        }
+
+        provider.$get = function() {
+            var service = new ShoppingListManager(provider.config.maxItems);
+            return service;
+        };
+    }
+
 })();

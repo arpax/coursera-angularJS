@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app=providers>
+
+<head>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <title>Shopping List</title>
+</head>
+
+<body>
+
+    <div ng-controller="shoppingListController as ctrl">
+        <input ng-model="ctrl.name" placeholder="Nome"></input>
+        <input ng-model="ctrl.amount" placeholder="1"></input>
+
+        <button ng-click="ctrl.newItem()">New item</button>
+
+        <ul>
+            <li ng-repeat="item in ctrl.shoppingList">
+                {{ item.name }} : {{ item.quantity }}
+                <button ng-click="ctrl.removeItem($index)">REMOVE</button>
+            </li>
+        </ul>
+
+        <div>Error: {{ctrl.message}}</div>
+    </div>
+</body>
+
+</html>
