@@ -34,7 +34,7 @@
     <div ng-controller="ToBuyController as tbc" class="col-md-6">
      <h2>To Buy:</h2>
      <ul>
-       <li ng-repeat="item in tbc.items" >Buy {{item}} <button class="btn btn-default" ng-click="tbc.buyItem($index)"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
+       <li ng-repeat="item in tbc.items" >Buy {{ item.quantity }} {{ item.name }}<button class="btn btn-default" ng-click="tbc.buyItem($index)"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
      </ul>
      <div ng-if="tbc.items.length == 0" class="emptyMessage">Everything is bought!</div>
     </div>
@@ -43,7 +43,7 @@
     <div ng-controller="AlreadyBoughtController as abc" class="col-md-6">
      <h2>Already Bought:</h2>
      <ul>
-       <li ng-repeat="item in abc.items">Bought {{item}}</li>
+       <li ng-repeat="item in abc.items">Bought {{ item.quantity }} {{ item.name }}</li>
      </ul>
      <div ng-if="abc.items.length == 0" class="emptyMessage">Nothing bought yet.</div>
     </div>

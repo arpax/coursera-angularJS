@@ -31,7 +31,7 @@ function AlreadyBoughtController(ShoppingListCheckOffService) {
   function ShoppingListCheckOffService() {
     var service = this;
 
-    var itemsToBuy = ["10 Chocolate Cookies", "2 Vanilla Cookies", "8 Butter Cookies","2 Big Cookies","4 Small Cookies"];
+    var itemsToBuy = [{name:"Chocolate Cookies", quantity:"10"}, {name:"Vanilla Cookies", quantity:"1"},{name:"Butter Cookies", quantity:"15"},{name:"BIG Cookies", quantity:"3"},{name:"Small Cookies", quantity:"100"}];
     var itemsBought = [];
 
     //EXPOSED METHOD TO MOVE ITEMS
