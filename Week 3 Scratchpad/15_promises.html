@@ -16,7 +16,9 @@
     <h3>Shopping List</h3>
     <input type="text" ng-model="list.itemName" placeholder="item name">
     <input type="text" ng-model="list.itemQuantity" placeholder="quantity"> boxes
-    <button ng-click="list.addItem();">Add Item</button>
+    <button ng-click="list.addItemCallback();">Add Item - Callback Check</button>
+    <button ng-click="list.addItem2();">Add Item - Chain Check </button>
+    <button ng-click="list.addItem3();">Add Item - All Check </button>
     <ol>
       <li ng-repeat="item in list.items">
         {{ item.quantity }} boxes of {{ item.name }}
