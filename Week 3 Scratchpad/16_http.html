@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app='http'>
+
+<head>
+  <meta charset="utf-8">
+  <script src="angular.min.js"></script>
+  <script src="app.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <title>Restaurant category with $http</title>
+</head>
+
+<body>
+  <h1>Restaurant category with $http</h1>
+
+  <div ng-controller='RestaurantController as ctrl'>
+    <ol>
+      <li ng-repeat="category in ctrl.items">
+        {{ category.short_name }} - {{ category.name }}
+      </li>
+    </ol>
+  </div>
+
+</body>
+
+</html>
