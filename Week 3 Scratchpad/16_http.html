@@ -15,7 +15,7 @@
   <div ng-controller='RestaurantController as ctrl'>
     <ol>
       <li ng-repeat="category in ctrl.items">
-        {{ category.short_name }} - {{ category.name }}
+        <a href="" ng-click="ctrl.getMenuByCategory(category.short_name)">{{ category.short_name }} - {{ category.name }}</a>
       </li>
     </ol>
   </div>

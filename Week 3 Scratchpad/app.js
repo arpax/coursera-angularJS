@@ -198,6 +198,17 @@
                 console.log("CANNOT RETRIEVE CATEGORIES");
             });
 
+
+        ctrl.getMenuByCategory = function(short_name){
+            var menuPromise = CategoryManager.getMenuByCategory(short_name);
+            menuPromise.then(function(response){
+                console.log(response.data);
+            }).catch(function () {
+                console.log("CANNOT RETRIEVE MENU");
+            });
+
+        }
+
     }
 
     CategoryManager.$inject = ["$http", "BaseURL"];
@@ -210,6 +221,18 @@
             var response = $http({
                 method: "GET",
                 url: (BaseURL + "/categories.json")
+            })
+
+            return response;
+
+        }
+
+        manager.getMenuByCategory = function (short_name) {
+
+            var response = $http({
+                method: "GET"
+                , url: (BaseURL + "/menu_items.json")
+                , params: {category:short_name}
             })
 
             return response;
