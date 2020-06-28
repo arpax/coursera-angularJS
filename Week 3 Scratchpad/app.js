@@ -183,39 +183,39 @@
     angular.module('http', [])
         .controller('RestaurantController', RestaurantController)
         .service('CategoryManager', CategoryManager)
-        .constant('BaseURL',"https://davids-restaurant.herokuapp.com");
+        .constant('BaseURL', "https://davids-restaurant.herokuapp.com");
 
-        RestaurantController.$inject = ["CategoryManager"];
-        function RestaurantController (CategoryManager){
-            var ctrl = this;
-            
-            var categoryPromise = CategoryManager.getCategories();
-            categoryPromise
-            .then(function(response){
+    RestaurantController.$inject = ["CategoryManager"];
+    function RestaurantController(CategoryManager) {
+        var ctrl = this;
+
+        var categoryPromise = CategoryManager.getCategories();
+        categoryPromise
+            .then(function (response) {
                 ctrl.items = response.data;
             })
-            .catch(function(){
+            .catch(function () {
                 console.log("CANNOT RETRIEVE CATEGORIES");
             });
 
-        }
+    }
 
-        CategoryManager.$inject= ["$http","BaseURL"];
-        function CategoryManager ($http, BaseURL) {
+    CategoryManager.$inject = ["$http", "BaseURL"];
+    function CategoryManager($http, BaseURL) {
 
-            var manager = this;
+        var manager = this;
 
-            manager.getCategories = function(){
+        manager.getCategories = function () {
 
-                var response = $http({
-                    method:"GET",
-                    url: (BaseURL + "/categories.json")
-                })
-    
-                return response;
+            var response = $http({
+                method: "GET",
+                url: (BaseURL + "/categories.json")
+            })
 
-            }
+            return response;
 
         }
+
+    }
 
 })();
