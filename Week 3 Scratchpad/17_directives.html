@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app=directives>
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="directivesApp.js"></script>
+    <title>Shopping List with directives</title>
+</head>
+
+<body>
+
+    <h1>DIRECTIVES</h1>
+    <div>
+        <h3>LIST 1</h3>
+        <div ng-controller="shoppingListController1 as controller">
+            <input ng-model="controller.name" placeholder="Nome"></input>
+            <input ng-model="controller.amount" placeholder="1"></input>
+
+            <button ng-click="controller.newItem()">New item</button>
+
+            <ul>
+                <item-list></item-list>
+            </ul>
+
+            <div>Error: {{controller.message}}</div>
+        </div>
+
+        <h3>LIST 2</h3>
+        <div ng-controller="shoppingListController2 as controller">
+            <input ng-model="controller.name" placeholder="Nome"></input>
+            <input ng-model="controller.amount" placeholder="1"></input>
+
+            <button ng-click="controller.newItem()">New item</button>
+
+            <ul>
+                <item-List></item-List>
+            </ul>
+
+            <div>Error: {{controller.message}}</div>
+        </div>
+    </div>
+</body>
+
+</html>
