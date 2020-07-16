@@ -11,6 +11,7 @@
     function ItemList(){
         var ddo = {
             templateUrl : 'components/itemList.html'
+            , restrict: 'E'
             //template : 'TEST'
         };
         return ddo;
