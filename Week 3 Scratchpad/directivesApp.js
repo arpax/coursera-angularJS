@@ -10,7 +10,8 @@
 
     function ItemList(){
         var ddo = {
-            templateURL : 'itemList.html'
+            templateUrl : 'components/itemList.html'
+            //template : 'TEST'
         };
         return ddo;
     
