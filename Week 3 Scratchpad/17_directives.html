@@ -13,31 +13,27 @@
     <h1>DIRECTIVES</h1>
     <div>
         <h3>LIST 1</h3>
-        <div ng-controller="shoppingListController1 as controller">
-            <input ng-model="controller.name" placeholder="Nome"></input>
-            <input ng-model="controller.amount" placeholder="1"></input>
+        <div ng-controller="shoppingListController1 as controller1">
+            <input ng-model="controller1.name" placeholder="Nome"></input>
+            <input ng-model="controller1.amount" placeholder="1"></input>
 
-            <button ng-click="controller.newItem()">New item</button>
+            <button ng-click="controller1.newItem()">New item</button>
 
-            <ul>
-                <item-list></item-list>
-            </ul>
+            <item-list controller-name="controller1"></item-list>
 
-            <div>Error: {{controller.message}}</div>
+            <div>Error: {{controller1.message}}</div>
         </div>
 
         <h3>LIST 2</h3>
-        <div ng-controller="shoppingListController2 as controller">
-            <input ng-model="controller.name" placeholder="Nome"></input>
-            <input ng-model="controller.amount" placeholder="1"></input>
+        <div ng-controller="shoppingListController2 as controller2">
+            <input ng-model="controller2.name" placeholder="Nome"></input>
+            <input ng-model="controller2.amount" placeholder="1"></input>
 
-            <button ng-click="controller.newItem()">New item</button>
+            <button ng-click="controller2.newItem()">New item</button>
 
-            <ul>
-                <item-list></item-list>
-            </ul>
+            <item-list controller-name="contorller2"></item-list>
 
-            <div>Error: {{controller.message}}</div>
+            <div>Error: {{controller2.message}}</div>
         </div>
     </div>
 </body>

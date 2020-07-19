@@ -12,6 +12,9 @@
         var ddo = {
             templateUrl : 'components/itemList.html'
             , restrict: 'E'
+            , scope : {
+                controller : "=controllerName"
+            }
             //template : 'TEST'
         };
         return ddo;

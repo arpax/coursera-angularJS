@@ -1,4 +1,6 @@
-<li ng-repeat="item in controller.shoppingList">
-    {{ item.name }} : {{ item.quantity }}
-    <button ng-click="controller.removeItem($index)">REMOVE</button>
-</li>
+<ol>
+    <li ng-repeat="item in controller.shoppingList">
+        {{ item.name }} : {{ item.quantity }}
+        <button ng-click="controller.removeItem($index)">REMOVE</button>
+    </li>
+</ol>
