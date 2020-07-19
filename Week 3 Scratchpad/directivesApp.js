@@ -14,6 +14,7 @@
             , restrict: 'E'
             , scope : {
                 controller : "=controllerName"
+                , title : "@title"
             }
             //template : 'TEST'
         };
@@ -77,7 +78,7 @@ function shoppingListController2(ShoppingListFactory) {
         controller.title = title + " ( " + controller.shoppingList.length + " ) ";
     }
 
-    var title = "LIST 1 ";
+    var title = "LIST 2 ";
     controller.title = title + " ( " + controller.shoppingList.length + " ) ";
 
 
