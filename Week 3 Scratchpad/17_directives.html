@@ -12,8 +12,8 @@
 
     <h1>DIRECTIVES</h1>
     <div>
-        <h3>LIST 1</h3>
         <div ng-controller="shoppingListController1 as controller1">
+            <h3>{{controller1.title}}</h3>
             <input ng-model="controller1.name" placeholder="Nome"></input>
             <input ng-model="controller1.amount" placeholder="1"></input>
 
@@ -24,8 +24,8 @@
             <div>Error: {{controller1.message}}</div>
         </div>
 
-        <h3>LIST 2</h3>
         <div ng-controller="shoppingListController2 as controller2">
+            <h3>{{controller2.title}}</h3>
             <input ng-model="controller2.name" placeholder="Nome"></input>
             <input ng-model="controller2.amount" placeholder="1"></input>
 

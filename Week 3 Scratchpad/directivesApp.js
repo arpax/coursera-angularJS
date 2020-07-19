@@ -29,16 +29,22 @@ function shoppingListController1(ShoppingListFactory) {
     controller.amount = "";
 
     var manager = ShoppingListFactory();
+    controller.shoppingList = manager.getItems();
+
     // CALLS SERVICE FOR BUSINESS LOGIC
     controller.newItem = function () {
         manager.addItem(controller.name, controller.amount);
+        controller.title = title + " ( " + controller.shoppingList.length + " ) ";
     }
-
-    controller.shoppingList = manager.getItems();
-
+    
+    
     controller.removeItem = function (itemIndex) {
         manager.remove(itemIndex);
+        controller.title = title + " ( " + controller.shoppingList.length + " ) ";
     }
+
+    var title = "LIST 1 ";
+    controller.title = title + " ( " + controller.shoppingList.length + " ) ";
 }
 
 
@@ -50,21 +56,29 @@ function shoppingListController2(ShoppingListFactory) {
     controller.name = "";
     controller.amount = "";
     controller.message = "";
-    var manager = ShoppingListFactory(3);
-    // CALLS SERVICE FOR BUSINESS LOGIC
 
+
+    var manager = ShoppingListFactory(3);
+
+    controller.shoppingList = manager.getItems();
+    
+    // CALLS SERVICE FOR BUSINESS LOGIC
     controller.newItem = function () {
         try {
             manager.addItem(controller.name, controller.amount);
+            controller.title = title + " ( " + controller.shoppingList.length + " ) ";
         } catch (e) {
             controller.message = e.message;
         }
     }
-    controller.shoppingList = manager.getItems();
 
     controller.removeItem = function (itemIndex) {
         manager.remove(itemIndex);
+        controller.title = title + " ( " + controller.shoppingList.length + " ) ";
     }
+
+    var title = "LIST 1 ";
+    controller.title = title + " ( " + controller.shoppingList.length + " ) ";
 
 
 
