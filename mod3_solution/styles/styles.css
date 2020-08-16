@@ -8,6 +8,7 @@ input[type="text"] {
 .narrow-button {
   float: left;
   margin-left: 10px;
+  clear: right;
 }
 .loader {
   display: none;
@@ -29,6 +30,10 @@ input[type="text"] {
   border-radius: 50%;
   width: 3em;
   height: 3em;
+}
+.list-container{
+  float: left;
+  margin-left: 10px;
 }
 @-webkit-keyframes load8 {
   0% {
