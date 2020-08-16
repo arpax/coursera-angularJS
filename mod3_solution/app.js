@@ -55,9 +55,9 @@
     function FoundItemsDirective(){
         var ddo = {
             templateUrl : 'components/foundItems.html'
-            , controller : "NarrowItDownController"
-            , controllerAs : "ctrl"
-            , bindToController : "true"
+            , scope : {
+                found : "<"
+            }
         };
         return ddo;
     }
