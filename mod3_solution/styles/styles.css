@@ -8,7 +8,13 @@ input[type="text"] {
 .narrow-button {
   float: left;
   margin-left: 10px;
-  clear: right;
+}
+.item-button {
+  margin-left: 5px;
+  padding: 1px;
+  padding-left: 3px;
+  padding-right: 3px;
+  font-size: 70%
 }
 .loader {
   display: none;
@@ -34,6 +40,13 @@ input[type="text"] {
 .list-container{
   float: left;
   margin-left: 10px;
+  clear: left;
+}
+.item-name{
+  font-weight: bold;
+}
+.item-desc{
+  font-style: italic;
 }
 @-webkit-keyframes load8 {
   0% {

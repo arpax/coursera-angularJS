@@ -1,5 +1,16 @@
-<div class="list-container" >
+<div class="list-container">
     <ul ng-repeat="item in found" class="row">
-        <li>[{{item.short_name}}] {{item.name}}: {{item.description}}</li>
+        <li>
+            <div>
+                <span class="item-name">{{item.name}}</span>
+                <span class="item-short">[{{item.short_name}}] </span>
+
+                <button class="btn btn-danger btn-sm item-button">Don't want this one!</button>
+            </div>
+
+            <div>
+                <span class="item-desc">{{item.description}} </span>
+            </div>
+        </li>
     </ul>
 </div>
