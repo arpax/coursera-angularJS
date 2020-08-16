@@ -14,11 +14,20 @@
 
         var controller =this;
         controller.getItems = function (){
-            var matchedMenuItemsPromise = MenuSearchService.getMatchedMenuItems(controller.searchTerm);
+            if (controller.searchTerm){
+                var matchedMenuItemsPromise = MenuSearchService.getMatchedMenuItems(controller.searchTerm);
 
-            matchedMenuItemsPromise.then( function(result){
-                controller.found = result;
-            });
+                matchedMenuItemsPromise.then( function(result){
+                    controller.found = result;
+                });
+            } else{
+                controller.found = [];
+            }
+
+        }
+
+        controller.removeItem = function(index) {
+            controller.found.splice(index,1);
         }
     };
 

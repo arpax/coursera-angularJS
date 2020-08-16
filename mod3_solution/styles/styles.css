@@ -16,6 +16,10 @@ input[type="text"] {
   padding-right: 3px;
   font-size: 70%
 }
+.warning{
+  float: left;
+  color: red;
+}
 .loader {
   display: none;
   margin-left: 5px;
