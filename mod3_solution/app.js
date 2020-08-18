@@ -66,6 +66,7 @@
             templateUrl : 'components/foundItems.html'
             , scope : {
                 found : "<"
+                , onRemove : "&"
             }
         };
         return ddo;
