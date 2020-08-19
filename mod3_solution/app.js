@@ -27,7 +27,6 @@
         };
 
         controller.removeItem = function(itemIndex) {
-            //console.log("DEBUG");
             return controller.found.splice(itemIndex,1);
         };
     };
@@ -54,7 +53,6 @@
                     }
                 }
                 // return processed items
-                // console.log(foundItems);
                 return foundItems;
             });
 
