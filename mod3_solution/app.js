@@ -24,11 +24,12 @@
                 controller.found = [];
             }
 
-        }
+        };
 
-        controller.removeItem = function(index) {
-            controller.found.splice(index,1);
-        }
+        controller.removeItem = function(itemIndex) {
+            //console.log("DEBUG");
+            return controller.found.splice(itemIndex,1);
+        };
     };
 
     MenuSearchService.$inject =["$http","ItemsURL"];
@@ -40,7 +41,7 @@
             var resultPromise = $http({
                 method: "GET",
                 url: (ItemsURL)
-            })
+            });
 
             return resultPromise.then(function (result) {    
                 // process result and only keep items that match
@@ -65,8 +66,8 @@
         var ddo = {
             templateUrl : 'components/foundItems.html'
             , scope : {
-                found : "<"
-                , onRemove : "&"
+                found: "<"
+                , onRemove: "&"
             }
         };
         return ddo;

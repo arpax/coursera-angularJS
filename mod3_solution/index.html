@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="NarrowItDownApp">
+<html lang="en">
   <head>
     <title>Narrow Down Your Menu Choice</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +8,7 @@
     <script type="text/javascript" src="import/angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
   </head>
-<body>
+<body ng-app="NarrowItDownApp">
    <div class="container" ng-controller="NarrowItDownController as ctrl">
     <h1>Narrow Down Your Chinese Menu Choice</h1>
 
@@ -19,9 +19,8 @@
       <button ng-click="ctrl.getItems()" class="btn btn-primary">Narrow It Down For Me!</button>
     </div>
 
-    <!-- found-items should be implemented as a component --> 
-    <!-- found-items="foundItemsController" -->
-    <found-items found="ctrl.found" on-remove="ctrl.removeItem(index)"></found-items>
+    <!-- found-items should be implemented as a component -->
+    <found-items found="ctrl.found" onRemove="ctrl.removeItem(index)"></found-items>
     <div class="warning" ng-if="ctrl.found.length==0">Nothing found!</div>
   </div>
 
