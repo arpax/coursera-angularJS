@@ -3,6 +3,10 @@
 <ol>
     <li ng-repeat="item in controller.shoppingList">
         {{ item.name }} : {{ item.quantity }}
-        <button ng-click="controller.removeItem($index)">REMOVE</button>
+        <!-- <button ng-click="controller.removeItem($index)">REMOVE</button> -->
     </li>
 </ol>
+
+<div>Error: {{controller.message}}</div>
+
+<div ng-if="contorller.isCookieInList()">Error: cookie detected</div>

@@ -5,6 +5,7 @@
     angular.module("directives", [])
     .controller("shoppingListController1", shoppingListController1)
     .controller("shoppingListController2", shoppingListController2)
+    .controller("shoppingListDirectiveController", shoppingListDirectiveController)
     .factory("ShoppingListFactory", ShoppingListFactory)
     .directive("itemList", ItemList);
 
@@ -13,14 +14,41 @@
             templateUrl : 'components/itemList.html'
             , restrict: 'E'
             , scope : {
-                controller : "=controllerName"
+                // controller : "=controllerName" // directive take care of this
+                items :"<"
                 , title : "@title"
             }
+            , controller : 'shoppingListDirectiveController'
+            , controllerAs : "controller"
+            , bindToController : true
             //template : 'TEST'
         };
         return ddo;
     
     }
+
+    shoppingListDirectiveController.$inject = ["ShoppingListFactory"];
+    function shoppingListDirectiveController(ShoppingListFactory) {
+
+        var controller = this;
+
+        var manager = ShoppingListFactory();
+        controller.shoppingList = manager.getItems();
+
+        var title = "LIST 1 ";
+        controller.title = title + " ( " + controller.shoppingList.length + " ) ";
+
+        this.isCookieInList = function () {
+            for (item in shoppingList) {
+                var name = item.name;
+                if (name.toLowerCase().indexOf("cookie") !== -1) {
+                    return true;
+                }
+                return false;
+            }
+        }
+    }
+
 
 shoppingListController1.$inject = ["ShoppingListFactory"];
 function shoppingListController1(ShoppingListFactory) {
