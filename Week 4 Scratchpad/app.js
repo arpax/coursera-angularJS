@@ -1,31 +1,22 @@
 (function () {
 'use strict';
 
-angular.module('ShoppingListDirectiveApp', [])
+angular.module('ShoppingListComponentApp', [])
 .controller('ShoppingListController', ShoppingListController)
 .factory('ShoppingListFactory', ShoppingListFactory)
-.directive('shoppingList', ShoppingListDirective);
+.component('shoppingList',{
 
+  templateUrl: 'shoppingList.html',
+  controller: ShoppingListComponentController,
+  bindings: {
+    items: '<',
+    myTitle: '@title',
+    onRemove: '&'
+  },
 
-function ShoppingListDirective() {
-  var ddo = {
-    templateUrl: 'shoppingList.html',
-    scope: {
-      items: '<',
-      myTitle: '@title',
-      badRemove: '=',
-      onRemove: '&'
-    },
-    controller: ShoppingListDirectiveController,
-    controllerAs: 'list',
-    bindToController: true
-  };
+});
 
-  return ddo;
-}
-
-
-function ShoppingListDirectiveController() {
+function ShoppingListComponentController() {
   var list = this;
 
   list.cookiesInList = function () {

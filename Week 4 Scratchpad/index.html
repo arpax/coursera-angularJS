@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html ng-app='ShoppingListDirectiveApp'>
+<html ng-app='ShoppingListComponentApp'>
   <head>
     <meta charset="utf-8">
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
     <link rel="stylesheet" href="styles.css">
-    <title>Directives with Isolate Scope and '&'</title>
+    <title>Component Design</title>
   </head>
   <body>
-    <h1>Directives with Isolate Scope and '&'</h1>
+    <h1>Component Design</h1>
 
     <!-- LIST #1 - unlimited items -->
     <div id="list" ng-controller='ShoppingListController as list'>
@@ -20,7 +20,6 @@
       <shopping-list
         items="list.items"
         title="{{list.title}}"
-        bad-remove="list.removeItem"
         on-remove="list.removeItem(index)"></shopping-list>
 
     </div>
