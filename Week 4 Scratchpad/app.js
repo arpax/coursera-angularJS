@@ -29,6 +29,10 @@ function ShoppingListComponentController() {
 
     return false;
   };
+
+  list.remove = function(i){
+    list.onRemove({index :i});
+  }
 }
 
 
