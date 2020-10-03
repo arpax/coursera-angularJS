@@ -13,55 +13,15 @@ function ShoppingListDirective() {
     scope: {
       items: '<',
       myTitle: '@title',
+      badRemove: '=',
       onRemove: '&'
     },
     controller: ShoppingListDirectiveController,
     controllerAs: 'list',
-    bindToController: true,
-    link: ShoppingListDirectiveLink,
-    transclude: true
+    bindToController: true
   };
 
   return ddo;
-}
-
-
-function ShoppingListDirectiveLink(scope, element, attrs, controller) {
-  console.log("Link scope is: ", scope);
-  console.log("Controller instance is: ", controller);
-  console.log("Element is: ", element);
-
-  scope.$watch('list.cookiesInList()', function (newValue, oldValue) {
-    console.log("Old value: ", oldValue);
-    console.log("New value: ", newValue);
-
-    if (newValue === true) {
-      displayCookieWarning();
-    }
-    else {
-      removeCookieWarning();
-    }
-  });
-
-  function displayCookieWarning() {
-    // Using Angular jqLite
-    // var warningElem = element.find("div");
-    // warningElem.css('display', 'block');
-
-    // If jQuery included before Angular
-    var warningElem = element.find("div.error");
-    warningElem.slideDown(900);
-  }
-
-  function removeCookieWarning() {
-    // Using Angular jqLite
-    // var warningElem = element.find('div');
-    // warningElem.css('display', 'none');
-
-    // If jQuery included before Angular
-    var warningElem = element.find('div.error');
-    warningElem.slideUp(900);
-  }
 }
 
 
@@ -91,8 +51,6 @@ function ShoppingListController(ShoppingListFactory) {
   list.items = shoppingList.getItems();
   var origTitle = "Shopping List #1";
   list.title = origTitle + " (" + list.items.length + " items )";
-
-  list.warning = "COOKIES DETECTED!";
 
   list.itemName = "";
   list.itemQuantity = "";
