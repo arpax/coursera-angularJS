@@ -1,5 +1,5 @@
 
 function myEvent(){
-    window.open("index.html", '_blank');
-    window.location.href = 'landing.html';
+    window.open("index.html");
+    window.open("landing.html", "_self");
 }
