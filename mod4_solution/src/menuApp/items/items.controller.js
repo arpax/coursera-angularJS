@@ -9,7 +9,7 @@
     function ItemsMainController(items) {
         var imc = this;
         imc.items=items.data.menu_items;
-        console.log(imc.items);
+        //console.log(imc.items);
     };
 
     
