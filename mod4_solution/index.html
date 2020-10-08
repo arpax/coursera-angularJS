@@ -10,11 +10,20 @@
     <script src="lib/angular-ui-router.min.js"></script>
 
     <!-- Modules -->
+    <script src="data.module.js"></script>
+    <script src="menudata.service.js"></script>
+    
     <script src="menuapp.module.js"></script>
+    <script src="categories.controller.js"></script>
+    <script src="categories.component.js"></script>
+
+    
     
 </head>
 <body ng-app="MenuApp">
-    Welcome to our Restaurant
+    Welcome to our Restaurant.
+
+    Go back to <a ui-sref='home'>home</a>
 
     <ui-view></ui-view>
 

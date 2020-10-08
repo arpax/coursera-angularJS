@@ -1,7 +1,7 @@
 (function(){
 
     'use strict';
-    angular.module('data',)
+    angular.module('data')
     .service('MenuDataService',MenuDataService)
     .constant('BaseURL', "https://davids-restaurant.herokuapp.com");
        
@@ -19,7 +19,7 @@
 
             return response;
 
-        };
+        }
         
 
         service.getItemsForCategory= function(categoryShortName){

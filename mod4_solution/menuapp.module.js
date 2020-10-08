@@ -20,12 +20,12 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
 
     .state('categories', {
       url: '/categories',
-      templateUrl: 'src/categories.html',
-      controller: 'categoriesController as categories',
+      templateUrl: 'src/categoriesMain.html',
+      controller: 'CategoriesMainController as cmc',
       resolve: {
-        categories: ['MenuDataService'], function(MenuDataService){
-          return MenuDataService,getAllCategories();
-        }
+        categories: ['MenuDataService', function(MenuDataService){
+          return MenuDataService.getAllCategories();
+       }]
       }
     })
 
