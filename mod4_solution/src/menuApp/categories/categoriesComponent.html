@@ -2,8 +2,8 @@
 <div class="list-container">
     <ul class="row" ng-repeat="category in $ctrl.categoryList">
         <li>
-            <div>
-                <span class="item-name">{{category.name}}</span>
+            <div >
+                <a ui-sref="items({categoryShortName:category.short_name})" class="item-name">{{category.name}}</a>
                 <span class="item-short">[{{category.short_name}}] </span>
             </div>
             <div>

@@ -3,12 +3,10 @@
     'use strict';
     angular.module('MenuApp')
     .component("items",{
-        templateUrl : '/items',
-        controller : 'itemsController',
+        templateUrl : 'src/menuApp/items/itemsComponent.html',
         bindings : {
-            items : '<'
+            itemList : '<'
         }
     });
-
     
-    })();
+})();

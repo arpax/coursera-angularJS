@@ -33,12 +33,13 @@
 
         .state('items', {
         url: '/items/{categoryShortName}',
-        templateUrl: 'src/menuApp/items/items.html',
-        controller: 'itemsController as items',
+        templateUrl: 'src/menuApp/items/itemsMain.html',
+        controller: 'ItemsMainController as imc',
         resolve: {
-            categories: ['MenuDataService'], function(MenuDataService){
-            return MenuDataService.getItemsForCategory(categoryShortName);
-            }
+            items: ['$stateParams','MenuDataService', function($stateParams, MenuDataService){
+                //console.log("resolving items");
+                return MenuDataService.getItemsForCategory($stateParams.categoryShortName);
+            }]
         }
         });
     }

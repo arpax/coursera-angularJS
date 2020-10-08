@@ -23,7 +23,7 @@
         
 
         service.getItemsForCategory= function(categoryShortName){
-
+            // console.log("calling items for category: "+categoryShortName)
             var response = $http({
                 method: "GET",
                 url: (BaseURL + "/menu_items.json?category="+categoryShortName)
