@@ -8,7 +8,8 @@
 
     function CategoriesMainController(categories) {
         var cmc = this;
-        cmc.categories=categories;
+        cmc.categories=categories.data;
+        //console.log(cmc.categories);
     };
 
     

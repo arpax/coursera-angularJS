@@ -35,7 +35,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
       controller: 'itemsController as items',
       resolve: {
         categories: ['MenuDataService'], function(MenuDataService){
-          return MenuDataService,getItemsForCategory(categoryShortName);
+          return MenuDataService.getItemsForCategory(categoryShortName);
         }
       }
     });
