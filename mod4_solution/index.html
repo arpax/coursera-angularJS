@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Restaurant</title>
+
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
     
     <!-- Libraries -->
     <script src="lib/angular.min.js"></script>
@@ -21,10 +24,8 @@
     
     
 </head>
-<body ng-app="MenuApp">
-    Welcome to our Restaurant.
-
-    Go back to <a ui-sref='home'>home</a>
+<body class="container" ng-app="MenuApp">
+    <h1 class="pull-left">Welcome to our Restaurant! </h1>
 
     <ui-view></ui-view>
 

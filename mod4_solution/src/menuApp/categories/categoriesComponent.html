@@ -1,6 +1,14 @@
-<ul>
-    categories component
-    <li ng-repeat="category in $ctrl.categoryList">
-        {{$index}} : {{category.name}}
-    </li>
-</ul>
+</br></br>
+<div class="list-container">
+    <ul class="row" ng-repeat="category in $ctrl.categoryList">
+        <li>
+            <div>
+                <span class="item-name">{{category.name}}</span>
+                <span class="item-short">[{{category.short_name}}] </span>
+            </div>
+            <div>
+                <span class="item-desc">{{category.special_instructions}} </span>
+            </div>
+        </li>
+    </ul>
+</div>
