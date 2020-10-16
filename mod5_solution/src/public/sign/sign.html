@@ -1,1 +1,24 @@
-<div id="main-content" class="container">sign</div>
+<div id="main-content" class="container">
+
+    <fieldset>
+        <h3>Sign up for the newsletter</h3>
+        <form name="newsletterSignUpForm" novalidate>
+          <input type="text" name="firstName" ng-model="firstName" placeholder="Enter your first name">
+          <span ng-if="newsletterSignUpForm.firstName.$error.required && newsletterSignUpForm.firstName.$touched">
+            First name required
+          </span>
+          <input type="text" name="lastName" ng-model="lastName" placeholder="Enter your last name">
+          <span ng-if="newsletterSignUpForm.lastName.$error.required && newsletterSignUpForm.lastName.$touched">
+            Last name required
+          </span>
+          <input type="email" name="email" ng-model="email" placeholder="Enter your email address">
+          <span ng-if="(newsletterSignUpForm.email.$error || newsletterSignUpForm.email.$error.required) && newsletterSignUpForm.desc.$touched">
+            Please enter a valid email
+          </span>
+        </br></br>
+          <button ng-click="ctrl.go()" ng-disabled="newsletterSignUpForm.$invalid">Submit</button>
+        </form>
+      </fieldset>
+
+
+</div>
