@@ -1,20 +1,37 @@
 <div id="main-content" class="container">
 
     <fieldset>
-        <h3>Sign up for the newsletter</h3>
+        <h3 class=intro >Sign up for the newsletter</h3>
         <form name="newsletterSignUpForm" novalidate>
-          <input type="text" name="firstName" ng-model="firstName" placeholder="Enter your first name">
-          <span ng-if="newsletterSignUpForm.firstName.$error.required && newsletterSignUpForm.firstName.$touched">
+
+        <div class=row>
+          <input type="text" name="firstName" ng-model="firstName" required placeholder="Enter your first name">
+          <span class=alert ng-if="newsletterSignUpForm.firstName.$error.required && newsletterSignUpForm.firstName.$touched">
             First name required
           </span>
-          <input type="text" name="lastName" ng-model="lastName" placeholder="Enter your last name">
-          <span ng-if="newsletterSignUpForm.lastName.$error.required && newsletterSignUpForm.lastName.$touched">
+        </div>
+
+        <div class=row>
+          <input type="text" name="lastName" ng-model="lastName" required placeholder="Enter your last name">
+          <span class=alert ng-if="newsletterSignUpForm.lastName.$error.required && newsletterSignUpForm.lastName.$touched">
             Last name required
           </span>
-          <input type="email" name="email" ng-model="email" placeholder="Enter your email address">
-          <span ng-if="(newsletterSignUpForm.email.$error || newsletterSignUpForm.email.$error.required) && newsletterSignUpForm.desc.$touched">
+        </div>
+
+        <div class=row>
+          <input type="email" name="email" ng-model="email" required placeholder="Enter your email address">
+          <span class=alert ng-if="(newsletterSignUpForm.email.$error.required || newsletterSignUpForm.email.$error.email ) && newsletterSignUpForm.email.$touched">
             Please enter a valid email
           </span>
+        </div>
+
+        <div class=row>
+          <input type="number" name="phone" ng-model="phone" required placeholder="Enter your phone address">
+          <span class=alert ng-if="(newsletterSignUpForm.phone.$error.required || newsletterSignUpForm.phone.$error.number ) && newsletterSignUpForm.phone.$touched">
+            Please enter a valid phone number
+          </span>
+        </div>
+
         </br></br>
           <button ng-click="ctrl.go()" ng-disabled="newsletterSignUpForm.$invalid">Submit</button>
         </form>

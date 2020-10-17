@@ -124,6 +124,15 @@ h3.menu-item-title {
 
 input {
   color: black;
+  margin: 0 auto 15px;
+}
+
+.intro{
+  margin: 0 auto 25px;
+}
+
+.alert {
+  font-style: italic;
 }
 
 button {
@@ -136,6 +145,18 @@ button {
   text-shadow: black 0 0.05em 0.05em;
   background-color:#f6b319;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+/* End sign up page */
 
 /********** Large devices only **********/
 @media (min-width: 1200px) {
