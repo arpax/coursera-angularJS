@@ -39,10 +39,17 @@
           </span>
         </div>
 
-        </br></br>
+        <div class=row>
+          <div class=alert ng-if="sc.message">
+            {{sc.message}}
+          </div>
+        </div>
+
+        </br>
           <button ng-click="sc.go()">Submit</button>
         </form>
       </fieldset>
+
 
 
 </div>

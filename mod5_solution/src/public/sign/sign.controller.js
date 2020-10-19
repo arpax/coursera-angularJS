@@ -7,8 +7,9 @@
     SignController.$inject = ['MenuService'];
     function SignController(MenuService) {
         var $ctrl = this;
+        $ctrl.message ="";
         $ctrl.go = function(){
-
+          $ctrl.message ="";
             // check if form is valid
             console.log($ctrl);
             MenuService.getMenuItem($ctrl.dish)
@@ -21,9 +22,11 @@
                 data.phone=$ctrl.phone;
                 data.dish= response.data
                 MenuService.setSubscriptionData(data);
+                $ctrl.message="Your information has been saved";
               })
               .catch(function(){
                 // if not valid, warn user
+                $ctrl.message="No such menu number exists";
               });
         };
     }
