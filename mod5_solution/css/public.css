@@ -144,6 +144,7 @@ button {
   font-weight: bold;
   text-shadow: black 0 0.05em 0.05em;
   background-color:#f6b319;
+  font-family: 'Lora', serif;
 }
 
 input::-webkit-outer-spin-button,

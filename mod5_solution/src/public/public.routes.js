@@ -21,11 +21,15 @@ function routeConfig ($stateProvider) {
     })
     .state('public.info', {
       url: '/info',
-      templateUrl: 'src/public/info/info.html'
+      templateUrl: 'src/public/info/info.html',
+      controller: 'InfoController',
+      controllerAs: 'ic'
     })
     .state('public.sign', {
       url: '/sign',
-      templateUrl: 'src/public/sign/sign.html'
+      templateUrl: 'src/public/sign/sign.html',
+      controller: 'SignController',
+      controllerAs: 'sc'
     })
     .state('public.menu', {
       url: '/menu',

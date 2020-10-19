@@ -9,6 +9,8 @@ MenuService.$inject = ['$http', 'ApiPath'];
 function MenuService($http, ApiPath) {
   var service = this;
 
+  var subscriptionData ={};
+
   service.getCategories = function () {
     return $http.get(ApiPath + '/categories.json').then(function (response) {
       return response.data;
@@ -26,6 +28,22 @@ function MenuService($http, ApiPath) {
       return response.data;
     });
   };
+
+  service.getMenuItem = function(shortName) {
+    return $http.get(ApiPath + '/menu_items/' + shortName + '.json');
+  };
+
+  service.getSubscriptionData= function(){
+    return subscriptionData;
+  }
+
+  service.setSubscriptionData= function(data){
+    subscriptionData.firstName = data.firstName;
+    subscriptionData.lastName = data.lastName;
+    subscriptionData.phone = data.phone;
+    subscriptionData.email = data.email;
+    subscriptionData.dish = data.dish;
+  }
 
 }
 

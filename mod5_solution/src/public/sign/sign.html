@@ -5,35 +5,42 @@
         <form name="newsletterSignUpForm" novalidate>
 
         <div class=row>
-          <input type="text" name="firstName" ng-model="firstName" required placeholder="Enter your first name">
+          <input type="text" name="firstName" ng-model="sc.firstName" required placeholder="Enter your first name">
           <span class=alert ng-if="newsletterSignUpForm.firstName.$error.required && newsletterSignUpForm.firstName.$touched">
             First name required
           </span>
         </div>
 
         <div class=row>
-          <input type="text" name="lastName" ng-model="lastName" required placeholder="Enter your last name">
+          <input type="text" name="lastName" ng-model="sc.lastName" required placeholder="Enter your last name">
           <span class=alert ng-if="newsletterSignUpForm.lastName.$error.required && newsletterSignUpForm.lastName.$touched">
             Last name required
           </span>
         </div>
 
         <div class=row>
-          <input type="email" name="email" ng-model="email" required placeholder="Enter your email address">
+          <input type="email" name="email" ng-model="sc.email" required placeholder="Enter your email address">
           <span class=alert ng-if="(newsletterSignUpForm.email.$error.required || newsletterSignUpForm.email.$error.email ) && newsletterSignUpForm.email.$touched">
             Please enter a valid email
           </span>
         </div>
 
         <div class=row>
-          <input type="number" name="phone" ng-model="phone" required placeholder="Enter your phone address">
+          <input type="number" name="phone" ng-model="sc.phone" required placeholder="Enter your phone address">
           <span class=alert ng-if="(newsletterSignUpForm.phone.$error.required || newsletterSignUpForm.phone.$error.number ) && newsletterSignUpForm.phone.$touched">
             Please enter a valid phone number
           </span>
         </div>
 
+        <div class=row>
+          <input type="text" name="dish" ng-model="sc.dish" required placeholder="Enter your favorite dish">
+          <span class=alert ng-if="newsletterSignUpForm.dish.$error.required && newsletterSignUpForm.dish.$touched">
+            Please eneter your favorite dish
+          </span>
+        </div>
+
         </br></br>
-          <button ng-click="ctrl.go()" ng-disabled="newsletterSignUpForm.$invalid">Submit</button>
+          <button ng-click="sc.go()">Submit</button>
         </form>
       </fieldset>
 

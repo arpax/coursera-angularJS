@@ -1,1 +1,9 @@
-<div id="main-content" class="container">info</div>
+<div id="main-content" class="container">
+    <div ng-if="ic.subscriptionData.dish">{{ic.subscriptionData}}</div>
+    <div ng-if="!ic.subscriptionData.dish">
+        Not Signed Up Yet. 
+        <a ui-sref="public.sign"> 
+            Sign up Now!
+        </a>
+    </div>
+</div>
