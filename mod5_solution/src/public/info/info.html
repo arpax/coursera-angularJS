@@ -1,12 +1,11 @@
 <div id="main-content" class="container">
     <div ng-if="ic.subscriptionData.dish">
-        <h3>Your data:</h3>
+        <h3>My Info</h3>
         <div>{{ic.subscriptionData.firstName}} {{ic.subscriptionData.lastName}}</div>
         <div>Phone number: {{ic.subscriptionData.phone}}</div>
         <div>Email: {{ic.subscriptionData.email}}</div>
         <div>Your favorite dish: </div><br>
-        <menu-item menu-item="ic.subscriptionData.dish">
-</menu-item>
+        <menu-item menu-item="ic.subscriptionData.dish"></menu-item>
     </div>
     <div ng-if="!ic.subscriptionData.dish">
         Not Signed Up Yet. 
