@@ -12,7 +12,7 @@
           $ctrl.message ="";
             // check if form is valid
             // console.log($ctrl);
-            MenuService.getMenuItem($ctrl.dish)
+            MenuService.getMenuItem($ctrl.dish.toUpperCase())
             .then(function(response) {
                 // if valid, then subscribe!
                 var data = {};                
